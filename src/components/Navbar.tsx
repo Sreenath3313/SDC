@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
@@ -182,12 +183,13 @@ const Navbar: React.FC = () => {
         >
             <div className="max-w-[1500px] mx-auto px-4 md:px-8">
                 <div className="flex items-center justify-between lg:justify-between h-[72px]">
-                    <a
-                        href="/"
+                    <Link
+                        to="/"
+                        aria-label="Navigate to home page"
                         className={`lg:hidden text-lg font-serif font-bold ${isSolid || mobileOpen ? 'text-neutral-dark' : 'text-white'}`}
                     >
                         SRIT
-                    </a>
+                    </Link>
                     {/* Desktop links — Fully Center/Expanded Layout */}
                     <div className="hidden w-full lg:flex items-center justify-center gap-4 xl:gap-6">
                         {navLinks.map((link) => (
