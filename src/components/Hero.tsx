@@ -18,7 +18,7 @@ const itemVariants = {
     show: { 
         opacity: 1, 
         y: 0, 
-        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
+        transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as any } 
     }
 };
 
@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
             <motion.div 
                 initial={{ x: '-100%' }}
                 animate={{ x: 0 }}
-                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as any }}
                 className="absolute top-0 left-0 bottom-0 z-10 w-full lg:w-[60%] xl:w-[50%] bg-gradient-to-r from-black/90 via-black/60 to-transparent flex flex-col justify-center pt-32 lg:pt-0 px-8 sm:px-12 xl:px-20"
             >
                 <motion.div
