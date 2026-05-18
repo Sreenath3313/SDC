@@ -5,9 +5,11 @@ import HomePage from './pages/HomePage'
 import DepartmentPage from './pages/DepartmentPage'
 import AllDepartmentsPage from './pages/AllDepartmentsPage'
 import MessageFromHead from './pages/MessageFromHead'
+import { useReveal } from './hooks/useReveal'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
+  useReveal(pathname)
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [pathname])
