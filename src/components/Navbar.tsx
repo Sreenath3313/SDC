@@ -182,6 +182,12 @@ const Navbar: React.FC = () => {
         >
             <div className="max-w-[1500px] mx-auto px-4 md:px-8">
                 <div className="flex items-center justify-between lg:justify-between h-[72px]">
+                    <a
+                        href="/"
+                        className={`lg:hidden text-lg font-serif font-bold ${isSolid || mobileOpen ? 'text-neutral-dark' : 'text-white'}`}
+                    >
+                        SRIT
+                    </a>
                     {/* Desktop links — Fully Center/Expanded Layout */}
                     <div className="hidden w-full lg:flex items-center justify-center gap-4 xl:gap-6">
                         {navLinks.map((link) => (
@@ -192,15 +198,15 @@ const Navbar: React.FC = () => {
                     {/* Mobile hamburger */}
                     <button
                         onClick={() => setMobileOpen(!mobileOpen)}
-                        className="lg:hidden relative w-6 h-5 z-50"
+                        className="lg:hidden relative w-11 h-11 z-50 flex items-center justify-center -mr-2"
                         aria-label="Toggle menu"
                     >
-                        <span className={`absolute left-0 w-full h-[1.5px] transition-all duration-300 ${(isSolid || mobileOpen) ? 'bg-neutral-dark' : 'bg-white'
-                            } ${mobileOpen ? 'top-1/2 -translate-y-1/2 rotate-45' : 'top-0'}`} />
-                        <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1.5px] transition-all duration-300 ${(isSolid || mobileOpen) ? 'bg-neutral-dark' : 'bg-white'
+                        <span className={`absolute left-1/2 -translate-x-1/2 w-6 h-[1.5px] transition-all duration-300 ${(isSolid || mobileOpen) ? 'bg-neutral-dark' : 'bg-white'
+                            } ${mobileOpen ? 'top-1/2 -translate-y-1/2 rotate-45' : 'top-2.5'}`} />
+                        <span className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-[1.5px] transition-all duration-300 ${(isSolid || mobileOpen) ? 'bg-neutral-dark' : 'bg-white'
                             } ${mobileOpen ? 'opacity-0' : ''}`} />
-                        <span className={`absolute left-0 w-full h-[1.5px] transition-all duration-300 ${(isSolid || mobileOpen) ? 'bg-neutral-dark' : 'bg-white'
-                            } ${mobileOpen ? 'top-1/2 -translate-y-1/2 -rotate-45' : 'bottom-0'}`} />
+                        <span className={`absolute left-1/2 -translate-x-1/2 w-6 h-[1.5px] transition-all duration-300 ${(isSolid || mobileOpen) ? 'bg-neutral-dark' : 'bg-white'
+                            } ${mobileOpen ? 'top-1/2 -translate-y-1/2 -rotate-45' : 'bottom-2.5'}`} />
                     </button>
                 </div>
 

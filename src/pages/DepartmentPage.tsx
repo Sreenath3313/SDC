@@ -58,7 +58,7 @@ const DepartmentPage: React.FC = () => {
         <div className="min-h-screen bg-white">
             {/* Top Navigation */}
             <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-primary/10 bg-white/90">
-                <div className="max-w-[1600px] mx-auto px-6 lg:px-10">
+                <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
                     <div className="flex items-center justify-between h-[68px]">
                         <div className="flex items-center gap-4">
                             <Link to="/" className="font-serif text-2xl font-bold text-primary">
@@ -69,7 +69,7 @@ const DepartmentPage: React.FC = () => {
                                 {dept.code} Department
                             </span>
                         </div>
-                        <Link to="/departments" className="hidden sm:flex text-base font-medium text-primary">
+                        <Link to="/departments" className="inline-flex text-sm sm:text-base font-medium text-primary">
                             ← All Departments
                         </Link>
                     </div>
@@ -143,7 +143,7 @@ const DepartmentPage: React.FC = () => {
                             {/* Replaced the harsh orange with a premium cinematic dark gradient for text legibility */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
                         </div>
-                        <div className="relative z-10 px-8 py-12 lg:px-12 lg:py-16 w-full">
+                        <div className="relative z-10 px-4 sm:px-6 py-10 sm:py-12 lg:px-12 lg:py-16 w-full">
                             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
                                 {dept.fullName}
                             </h1>
@@ -153,13 +153,13 @@ const DepartmentPage: React.FC = () => {
                         </div>
                     </section>
 
-                    <div className="lg:hidden px-6 pt-6 -mb-4 overflow-x-auto no-scrollbar">
+                    <div className="lg:hidden px-4 sm:px-6 pt-5 sm:pt-6 -mb-2 sm:-mb-4 overflow-x-auto no-scrollbar">
                         <div className="flex gap-2 min-w-max pb-2">
                             {sidebarItems.map((item) => (
                                 <button
                                     key={item.key}
                                     onClick={() => setActiveTab(item.key)}
-                                    className={`px-5 py-2.5 rounded-full text-[15px] font-semibold transition-all duration-300 ${
+                                    className={`px-5 py-3 rounded-full text-[14px] font-semibold whitespace-nowrap transition-all duration-300 ${
                                         activeTab === item.key 
                                             ? 'bg-primary text-white shadow-lg shadow-primary/20' 
                                             : 'bg-white text-neutral-600 border border-neutral-200'
@@ -171,7 +171,7 @@ const DepartmentPage: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="px-6 py-10">
+                    <div className="px-4 sm:px-6 py-8 sm:py-10">
                         {renderContent()}
                     </div>
                 </main>

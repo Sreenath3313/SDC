@@ -78,7 +78,7 @@ const Departments: React.FC = () => {
                             </p>
 
                             {/* Stats Grid */}
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 pb-8 border-b border-neutral-100">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mb-10 pb-8 border-b border-neutral-100">
                                 <div>
                                     <div className="flex items-center gap-2 text-primary mb-2">
                                         <Users className="w-4 h-4" />
@@ -137,7 +137,7 @@ const Departments: React.FC = () => {
                 </motion.div>
 
                 {/* --- STANDARD DEPARTMENTS GRID --- */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {standardDepts.map((dept, i) => (
                         <motion.div
                             key={dept.slug}
@@ -153,7 +153,7 @@ const Departments: React.FC = () => {
                                 <div className="absolute bottom-0 left-0 w-full h-[3px] bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left z-20" />
 
                                 {/* Image Header */}
-                                <div className="relative h-48 overflow-hidden">
+                                <div className="relative h-44 sm:h-48 overflow-hidden">
                                     <img
                                         src={deptImages[dept.code]}
                                         alt={dept.name}
@@ -179,20 +179,37 @@ const Departments: React.FC = () => {
                                 </div>
 
                                 {/* Main Content Area with hidden hover wrapper */}
-                                <div className="relative overflow-hidden h-56 bg-white">
+                                <div className="relative overflow-hidden bg-white md:h-56">
 
                                     {/* Default State (Visible initially, slides up on hover) */}
-                                    <div className="p-7 absolute inset-0 transition-transform duration-500 ease-[0.22,1,0.36,1] group-hover:-translate-y-full">
+                                    <div className="p-5 sm:p-7 md:absolute md:inset-0 md:transition-transform md:duration-500 md:ease-[0.22,1,0.36,1] md:group-hover:-translate-y-full">
                                         <h3 className="font-serif text-[19px] font-bold text-neutral-dark mb-3 leading-snug">
                                             {dept.name}
                                         </h3>
                                         <p className="text-neutral-500 text-[13.5px] leading-relaxed line-clamp-3">
                                             {dept.tagline}
                                         </p>
+                                        <div className="mt-5 md:hidden">
+                                            <span className="text-primary text-[10px] font-bold tracking-[0.15em] uppercase block mb-2.5">
+                                                Research Focus
+                                            </span>
+                                            <ul className="space-y-1.5">
+                                                {dept.researchAreas.slice(0, 2).map(area => (
+                                                    <li key={area} className="flex items-start gap-2 text-[13px] text-neutral-700 font-medium">
+                                                        <span className="text-primary mt-1 text-[10px]">■</span>
+                                                        <span className="leading-tight">{area}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <div className="mt-4 flex items-center gap-2 text-primary font-bold text-[13px] uppercase tracking-wide">
+                                                Explore full details
+                                                <span>→</span>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     {/* Hover State (Hidden initially below, slides up on hover) */}
-                                    <div className="p-7 absolute inset-0 bg-warm-50 translate-y-full transition-transform duration-500 ease-[0.22,1,0.36,1] group-hover:translate-y-0 flex flex-col justify-between">
+                                    <div className="hidden md:flex p-7 absolute inset-0 bg-warm-50 translate-y-full transition-transform duration-500 ease-[0.22,1,0.36,1] group-hover:translate-y-0 flex-col justify-between">
                                         <div>
                                             <span className="text-primary text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
                                                 Research Focus
