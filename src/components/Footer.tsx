@@ -58,11 +58,11 @@ const Footer: React.FC = () => {
                             Rotarypuram, Anantapur — 515701, Andhra Pradesh
                         </p>
                     </div>
-                    <div className="flex items-center gap-5 text-sm text-white/35">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-5 text-sm text-white/35">
                         <a href="tel:9515611111" className="hover:text-white/60 transition-colors">
                             91-951 561 1111
                         </a>
-                        <span className="w-px h-3 bg-white/15" />
+                        <span className="hidden sm:block w-px h-3 bg-white/15" />
                         <a href="mailto:hr@srit.ac.in" className="hover:text-white/60 transition-colors">
                             hr@srit.ac.in
                         </a>
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 {/* Link columns */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-6 mb-14">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 lg:gap-6 mb-14">
                     {Object.entries(columns).map(([title, links]) => (
                         <div key={title}>
                             <p className="label-caps text-white/20 mb-5">{title}</p>
@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
                                 href={social.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-8 h-8 flex items-center justify-center text-white/20 hover:text-white/50 transition-colors duration-300"
+                                className="w-10 h-10 flex items-center justify-center text-white/20 hover:text-white/50 transition-colors duration-300"
                                 aria-label={social.label}
                             >
                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

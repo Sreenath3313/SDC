@@ -13,7 +13,7 @@ const DepartmentAbout: React.FC<DepartmentAboutProps> = ({ dept }) => {
             <div className="space-y-10">
                 {/* About Title & Description */}
                 <div>
-                    <h2 className="font-serif text-3xl lg:text-4xl font-bold uppercase mb-6 text-neutral-dark flex items-center gap-4 tracking-tight">
+                    <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold uppercase mb-6 text-neutral-dark flex flex-wrap items-center gap-3 sm:gap-4 tracking-tight">
                         <span className="w-10 h-[3px] bg-primary rounded-full"></span>
                         ABOUT THE DEPARTMENT
                     </h2>
@@ -25,7 +25,7 @@ const DepartmentAbout: React.FC<DepartmentAboutProps> = ({ dept }) => {
                 </div>
 
                 {/* Vision & Mission */}
-                <div className="bg-neutral-100 rounded-3xl p-8 lg:p-12">
+                <div className="bg-neutral-100 rounded-3xl p-6 sm:p-8 lg:p-12">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <div>
                             <h3 className="text-primary font-black text-sm lg:text-[15px] uppercase tracking-[0.2em] mb-5">Vision</h3>
@@ -45,7 +45,7 @@ const DepartmentAbout: React.FC<DepartmentAboutProps> = ({ dept }) => {
                 </div>
 
                 {/* HOD Profile */}
-                <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-neutral-100 flex flex-col sm:flex-row gap-8 lg:gap-10 items-center sm:items-start">
+                <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-12 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-neutral-100 flex flex-col sm:flex-row gap-8 lg:gap-10 items-center sm:items-start">
                     {dept.hodMessage.image ? (
                         <img 
                             src={dept.hodMessage.image} 
@@ -75,7 +75,7 @@ const DepartmentAbout: React.FC<DepartmentAboutProps> = ({ dept }) => {
             {/* Right Column */}
             <div className="space-y-8">
                 {/* Contact Us Card */}
-                <div className="bg-primary text-white rounded-3xl p-8 lg:p-10 shadow-2xl shadow-primary/30">
+                <div className="bg-primary text-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl shadow-primary/30">
                     <h3 className="font-serif text-2xl font-bold flex items-center gap-3 mb-10">
                         <span className="w-2 h-2 rounded-full bg-white"></span>
                         CONTACT US
@@ -111,7 +111,7 @@ const DepartmentAbout: React.FC<DepartmentAboutProps> = ({ dept }) => {
                 </div>
 
                 {/* Achievements Card */}
-                <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-neutral-100">
+                <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-neutral-100">
                     <h3 className="font-serif text-2xl font-bold flex items-center gap-3 mb-8 text-neutral-dark">
                         <span className="w-2 h-2 rounded-full bg-primary"></span>
                         ACHIEVEMENTS
