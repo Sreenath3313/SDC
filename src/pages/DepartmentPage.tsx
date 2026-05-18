@@ -6,6 +6,7 @@ import DepartmentFaculty from '../components/department/DepartmentFaculty';
 import DepartmentStudents from '../components/department/DepartmentStudents';
 import DepartmentGallery from '../components/department/DepartmentGallery';
 import DepartmentCourseStructure from '../components/department/DepartmentCourseStructure';
+import DepartmentProjects from '../components/department/DepartmentProjects';
 
 const sidebarItems = [
     { key: 'about', label: 'About Us', icon: '' },
@@ -18,8 +19,14 @@ const sidebarItems = [
 
 const DepartmentPage: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
+    const currentSlug = slug || '';
     const dept = getDepartmentBySlug(slug || '');
-    const [activeTab, setActiveTab] = useState('about');
+    const [activeTabsBySlug, setActiveTabsBySlug] = useState<Record<string, string>>({});
+    const activeTab = activeTabsBySlug[currentSlug] || 'about';
+
+    const handleTabChange = (tabKey: string) => {
+        setActiveTabsBySlug((prev) => ({ ...prev, [currentSlug]: tabKey }));
+    };
 
     if (!dept) {
         return (
@@ -45,6 +52,7 @@ const DepartmentPage: React.FC = () => {
             case 'course':
                 return <DepartmentCourseStructure dept={dept} />;
             case 'program':
+                return <DepartmentProjects dept={dept} />;
             case 'students':
                 return <DepartmentStudents />;
             case 'gallery':
@@ -100,11 +108,11 @@ const DepartmentPage: React.FC = () => {
                         {sidebarItems.map((item) => (
                             <button
                                 key={item.key}
-                                onClick={() => setActiveTab(item.key)}
+                                onClick={() => handleTabChange(item.key)}
                                 className={`w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl mb-1 transition-all duration-300 ${
                                     activeTab === item.key 
-                                        ? 'bg-neutral-300 text-neutral-dark font-semibold shadow-sm' 
-                                        : 'bg-transparent text-neutral-dark/90 hover:bg-neutral-300/50 hover:text-primary font-normal'
+                                        ? 'bg-primary text-white font-semibold shadow-lg shadow-primary/20' 
+                                        : 'bg-transparent text-neutral-dark/90 hover:bg-primary/10 hover:text-primary font-normal'
                                 }`}
                             >
                                 <span className="text-[15px]">{item.label}</span>
@@ -158,7 +166,7 @@ const DepartmentPage: React.FC = () => {
                             {sidebarItems.map((item) => (
                                 <button
                                     key={item.key}
-                                    onClick={() => setActiveTab(item.key)}
+                                    onClick={() => handleTabChange(item.key)}
                                     className={`px-5 py-3 rounded-full text-[14px] font-semibold whitespace-nowrap transition-all duration-300 ${
                                         activeTab === item.key 
                                             ? 'bg-primary text-white shadow-lg shadow-primary/20' 

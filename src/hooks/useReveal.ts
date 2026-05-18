@@ -4,7 +4,7 @@ import { useEffect } from 'react';
  * Observes all `.reveal` elements and adds `.visible` when they
  * scroll into the viewport (15% threshold). Runs once on mount.
  */
-export function useReveal() {
+export function useReveal(trigger?: string) {
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -23,5 +23,5 @@ export function useReveal() {
         });
 
         return () => observer.disconnect();
-    }, []);
+    }, [trigger]);
 }
