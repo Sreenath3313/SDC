@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import HomePage from './pages/HomePage'
@@ -16,6 +16,11 @@ function ScrollToTop() {
   return null
 }
 
+function DepartmentPageRoute() {
+  const { slug } = useParams()
+  return <DepartmentPage key={slug} />
+}
+
 function App() {
   return (
     <BrowserRouter>
@@ -23,7 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/departments" element={<AllDepartmentsPage />} />
-        <Route path="/department/:slug/*" element={<DepartmentPage />} />
+        <Route path="/department/:slug/*" element={<DepartmentPageRoute />} />
         <Route path="/message-from-head" element={<MessageFromHead />} />
       </Routes>
     </BrowserRouter>

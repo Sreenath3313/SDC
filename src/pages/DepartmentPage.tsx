@@ -19,14 +19,8 @@ const sidebarItems = [
 
 const DepartmentPage: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
-    const currentSlug = slug || '';
     const dept = getDepartmentBySlug(slug || '');
-    const [activeTabsBySlug, setActiveTabsBySlug] = useState<Record<string, string>>({});
-    const activeTab = activeTabsBySlug[currentSlug] || 'about';
-
-    const handleTabChange = (tabKey: string) => {
-        setActiveTabsBySlug((prev) => ({ ...prev, [currentSlug]: tabKey }));
-    };
+    const [activeTab, setActiveTab] = useState('about');
 
     if (!dept) {
         return (
@@ -108,7 +102,7 @@ const DepartmentPage: React.FC = () => {
                         {sidebarItems.map((item) => (
                             <button
                                 key={item.key}
-                                onClick={() => handleTabChange(item.key)}
+                                onClick={() => setActiveTab(item.key)}
                                 className={`w-full text-left flex items-center gap-3 px-4 py-3 rounded-xl mb-1 transition-all duration-300 ${
                                     activeTab === item.key 
                                         ? 'bg-primary text-white font-semibold shadow-lg shadow-primary/20' 
@@ -166,10 +160,10 @@ const DepartmentPage: React.FC = () => {
                             {sidebarItems.map((item) => (
                                 <button
                                     key={item.key}
-                                    onClick={() => handleTabChange(item.key)}
+                                    onClick={() => setActiveTab(item.key)}
                                     className={`px-5 py-3 rounded-full text-[14px] font-semibold whitespace-nowrap transition-all duration-300 ${
                                         activeTab === item.key 
-                                            ? 'bg-primary text-white shadow-lg shadow-primary/20' 
+                                            ? 'bg-primary text-white shadow-lg shadow-primary/20'
                                             : 'bg-white text-neutral-600 border border-neutral-200'
                                     }`}
                                 >
