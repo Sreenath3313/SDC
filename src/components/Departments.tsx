@@ -202,8 +202,8 @@ const Departments: React.FC = () => {
                                                 ))}
                                             </ul>
                                             <div className="mt-4 flex items-center gap-2 text-primary font-bold text-[13px] uppercase tracking-wide">
-                                                Explore full details
-                                                <span>→</span>
+                                                Tap to learn more
+                                                <span aria-hidden="true">→</span>
                                             </div>
                                         </div>
                                     </div>
@@ -226,7 +226,7 @@ const Departments: React.FC = () => {
 
                                         <div className="flex items-center gap-2 text-primary font-bold text-[13px] uppercase tracking-wide">
                                             Explore full details
-                                            <span className="group-hover:translate-x-1 transition-transform">→</span>
+                                            <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform">→</span>
                                         </div>
                                     </div>
 

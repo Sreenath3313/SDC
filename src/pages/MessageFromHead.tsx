@@ -84,7 +84,7 @@ const MessageFromHead: React.FC = () => {
                         >
                             {/* Quote highlight */}
                             <div className="relative">
-                                <Quote className="absolute -top-6 -left-2 sm:-left-6 w-14 h-14 sm:w-16 sm:h-16 text-primary/10 rotate-180" />
+                                <Quote aria-hidden="true" className="absolute -top-6 -left-2 sm:-left-6 w-14 h-14 sm:w-16 sm:h-16 text-primary/10 rotate-180" />
                                 <h3 className="font-serif text-2xl lg:text-3xl text-neutral-800 leading-snug relative z-10 italic">
                                     "Education is not just about acquiring knowledge, but about developing the mindset to apply that knowledge for the betterment of society. At SRIT, we nurture innovators who lead with purpose."
                                 </h3>
